@@ -24,6 +24,7 @@ export const products: Product[] = [
     price: 0.25,
     rarity: 'brainrot',
     image: elefanteCocofanto,
+    gameValue: '70M',
   },
   {
     id: 'gattatino-nyanino',

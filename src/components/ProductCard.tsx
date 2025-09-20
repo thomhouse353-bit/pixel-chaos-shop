@@ -68,6 +68,13 @@ export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         <div className="text-2xl font-mono font-black text-primary">
           R$ {product.price.toFixed(2)}
         </div>
+        
+        {/* Game Value */}
+        {product.gameValue && (
+          <div className="text-sm font-mono text-accent mt-1">
+            Dinheiro do jogo: <span className="font-bold">{product.gameValue}</span>
+          </div>
+        )}
 
         {/* Add to Cart Button */}
         <Button

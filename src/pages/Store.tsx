@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { products } from '@/data/products';
+import { useState, useEffect } from 'react';
+import { products as initialProducts } from '@/data/products';
 import { useCart } from '@/hooks/useCart';
+import { Product } from '@/types/product';
 import { Header } from '@/components/Header';
 import { ProductCard } from '@/components/ProductCard';
 import { CartSidebar } from '@/components/CartSidebar';
