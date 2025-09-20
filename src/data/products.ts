@@ -32,6 +32,7 @@ export const products: Product[] = [
     price: 0.50,
     rarity: 'brainrot',
     image: gattatinoNyanino,
+    gameValue: '120M',
   },
   {
     id: 'girafa-celestial',
@@ -39,6 +40,7 @@ export const products: Product[] = [
     price: 0.25,
     rarity: 'brainrot',
     image: girafaCelestial,
+    gameValue: '85M',
   },
   {
     id: 'tralalero-tralala',
@@ -46,6 +48,7 @@ export const products: Product[] = [
     price: 0.50,
     rarity: 'brainrot',
     image: tralalerotralala,
+    gameValue: '150M',
   },
   {
     id: 'odin-din-din-dun',
@@ -53,6 +56,7 @@ export const products: Product[] = [
     price: 1.00,
     rarity: 'brainrot',
     image: odindindindun,
+    gameValue: '300M',
   },
   {
     id: 'unclito-samito',
@@ -60,6 +64,7 @@ export const products: Product[] = [
     price: 2.00,
     rarity: 'brainrot',
     image: unclitoSamito,
+    gameValue: '500M',
   },
   {
     id: 'tralalita-tralala',
@@ -67,6 +72,7 @@ export const products: Product[] = [
     price: 2.00,
     rarity: 'brainrot',
     image: tralalitaTralala,
+    gameValue: '450M',
   },
   {
     id: 'tukanno-banano',
@@ -74,6 +80,7 @@ export const products: Product[] = [
     price: 2.50,
     rarity: 'brainrot',
     image: tukannoBanano,
+    gameValue: '650M',
   },
   // Secreto Rarity
   {
@@ -82,6 +89,7 @@ export const products: Product[] = [
     price: 5.00,
     rarity: 'secreto',
     image: laVaccaSaturnoSaturnita,
+    gameValue: '1.2B',
   },
   {
     id: 'agarrini-la-palini',
@@ -89,6 +97,7 @@ export const products: Product[] = [
     price: 5.00,
     rarity: 'secreto',
     image: agarriniLaPalini,
+    gameValue: '1.5B',
   },
   {
     id: 'os-tralaleritos',
@@ -96,6 +105,7 @@ export const products: Product[] = [
     price: 7.00,
     rarity: 'secreto',
     image: osTralaleritos,
+    gameValue: '2B',
   },
   {
     id: 'karkerkar-kurkur',
@@ -103,6 +113,7 @@ export const products: Product[] = [
     price: 7.00,
     rarity: 'secreto',
     image: karkerkarKurkur,
+    gameValue: '2.5B',
   },
   {
     id: 'graipuss-medussi',
@@ -110,6 +121,7 @@ export const products: Product[] = [
     price: 10.00,
     rarity: 'secreto',
     image: graipussMedussi,
+    gameValue: '5B',
   },
   {
     id: 'chicleteira-de-bicicleta',
@@ -117,5 +129,6 @@ export const products: Product[] = [
     price: 15.00,
     rarity: 'secreto',
     image: chicleteiraDeBicicleta,
+    gameValue: '1T',
   },
 ];

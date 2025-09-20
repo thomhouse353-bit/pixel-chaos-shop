@@ -6,6 +6,7 @@ export interface Product {
   price: number;
   rarity: Rarity;
   image: string;
+  gameValue?: string; // Valor no jogo (ex: "70M", "2B", "1.5T")
 }
 
 export interface CartItem extends Product {

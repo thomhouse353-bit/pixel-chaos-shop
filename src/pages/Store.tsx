@@ -15,7 +15,16 @@ import { Rarity } from '@/types/product';
 export const Store = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [rarityFilter, setRarityFilter] = useState<Rarity | 'all'>('all');
+  const [products, setProducts] = useState<Product[]>(initialProducts);
   const { toast } = useToast();
+  
+  // Carregar produtos do localStorage
+  useEffect(() => {
+    const savedProducts = localStorage.getItem('admin_products');
+    if (savedProducts) {
+      setProducts(JSON.parse(savedProducts));
+    }
+  }, []);
   
   const {
     cart,
@@ -47,12 +56,12 @@ export const Store = () => {
     setIsCartOpen(false);
   };
 
-  const filteredProducts = initialProducts.filter(product => 
+  const filteredProducts = products.filter(product => 
     rarityFilter === 'all' || product.rarity === rarityFilter
   );
 
-  const brainrotCount = initialProducts.filter(p => p.rarity === 'brainrot').length;
-  const secretoCount = initialProducts.filter(p => p.rarity === 'secreto').length;
+  const brainrotCount = products.filter(p => p.rarity === 'brainrot').length;
+  const secretoCount = products.filter(p => p.rarity === 'secreto').length;
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -90,7 +99,7 @@ export const Store = () => {
                 className="font-mono"
                 size="sm"
               >
-                ALL ({initialProducts.length})
+                ALL ({products.length})
               </Button>
               
               <Button

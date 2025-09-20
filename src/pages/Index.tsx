@@ -1,5 +1,7 @@
 import { Store } from './Store';
 
-export const Index = () => {
+const Index = () => {
   return <Store />;
 };
+
+export default Index;
