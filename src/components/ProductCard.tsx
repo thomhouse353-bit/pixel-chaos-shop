@@ -71,7 +71,7 @@ export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         
         {/* Game Value */}
         {product.gameValue && (
-          <div className="text-lg font-mono text-accent mt-1 font-bold">
+          <div className="text-2xl font-mono text-accent mt-1 font-black">
             {product.gameValue}
           </div>
         )}
