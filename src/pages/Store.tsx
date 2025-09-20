@@ -47,12 +47,12 @@ export const Store = () => {
     setIsCartOpen(false);
   };
 
-  const filteredProducts = products.filter(product => 
+  const filteredProducts = initialProducts.filter(product => 
     rarityFilter === 'all' || product.rarity === rarityFilter
   );
 
-  const brainrotCount = products.filter(p => p.rarity === 'brainrot').length;
-  const secretoCount = products.filter(p => p.rarity === 'secreto').length;
+  const brainrotCount = initialProducts.filter(p => p.rarity === 'brainrot').length;
+  const secretoCount = initialProducts.filter(p => p.rarity === 'secreto').length;
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -90,7 +90,7 @@ export const Store = () => {
                 className="font-mono"
                 size="sm"
               >
-                ALL ({products.length})
+                ALL ({initialProducts.length})
               </Button>
               
               <Button
