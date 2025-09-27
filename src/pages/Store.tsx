@@ -123,7 +123,7 @@ export const Store = () => {
           </div>
         </div>
 
-        <Separator className="mb-8 bg-primary/30" />
+        <Separator className="mb-8 bg-gray-600/30" />
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -146,7 +146,7 @@ export const Store = () => {
 
         {/* Footer Info */}
         <div className="mt-16 text-center">
-          <Separator className="mb-8 bg-primary/30" />
+          <Separator className="mb-8 bg-gray-600/30" />
           <p className="text-muted-foreground font-mono">
             All creatures are procedurally blessed with maximum brainrot energy. 
             No refunds. Only chaos.

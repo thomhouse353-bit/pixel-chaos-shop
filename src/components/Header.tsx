@@ -10,14 +10,14 @@ interface HeaderProps {
 
 export const Header = ({ onOpenCart, cartItemCount }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-30 w-full border-b-2 border-primary bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-30 w-full border-b border-gray-600 bg-gray-800/95 backdrop-blur supports-[backdrop-filter]:bg-gray-800/60">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <a href="/" className="font-inter font-black text-2xl text-primary">
+          <a href="/" className="font-inter font-black text-2xl text-gray-300">
             PIXEL CHAOS
           </a>
-          <Badge className="bg-secondary text-secondary-foreground font-mono">SHOP</Badge>
+          <Badge className="bg-gray-700 text-gray-300 font-mono">SHOP</Badge>
         </div>
 
         {/* Actions */}

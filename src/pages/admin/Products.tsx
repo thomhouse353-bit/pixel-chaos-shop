@@ -114,7 +114,7 @@ const AdminProducts = () => {
             <Button 
               onClick={handleDeleteAllProducts} 
               variant="destructive" 
-              className="bg-red-800 hover:bg-red-900"
+              className="bg-gray-700 hover:bg-gray-800"
             >
               Apagar Todos os Produtos
             </Button>
@@ -160,7 +160,7 @@ const AdminProducts = () => {
                             <Button 
                               size="sm" 
                               variant="destructive"
-                              className="h-7 text-xs bg-red-800 hover:bg-red-900"
+                              className="h-7 text-xs bg-gray-700 hover:bg-gray-800"
                               onClick={() => handleDeleteProduct(product.id)}
                             >
                               Excluir

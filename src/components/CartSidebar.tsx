@@ -40,21 +40,21 @@ export const CartSidebar = ({
       {/* Sidebar */}
       <div
         className={cn(
-          'fixed right-0 top-0 h-full w-full md:w-96 bg-background border-l-2 border-primary z-50 transform transition-transform duration-300 ease-out',
+          'fixed right-0 top-0 h-full w-full md:w-96 bg-gray-800 border-l border-gray-600 z-50 transform transition-transform duration-300 ease-out',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
         {/* Scanlines background */}
-        <div className="absolute inset-0 scanlines opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 scanlines opacity-10 pointer-events-none" />
         
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b-2 border-primary bg-card/50 relative z-10">
+        <div className="flex items-center justify-between p-3 border-b border-gray-600 bg-gray-700 relative z-10">
           <div className="flex items-center gap-2">
-            <ShoppingCart className="w-5 h-5 text-primary" />
-            <h2 className="font-inter font-bold text-xl text-foreground">
-              BRAINROT CART
+            <ShoppingCart className="w-4 h-4 text-gray-400" />
+            <h2 className="font-inter font-medium text-base text-gray-300">
+              Cart
             </h2>
-            <Badge className="bg-secondary text-secondary-foreground font-mono">
+            <Badge className="bg-gray-600 text-gray-300 font-mono text-xs">
               {totalItems}
             </Badge>
           </div>
@@ -62,27 +62,27 @@ export const CartSidebar = ({
             variant="ghost"
             size="sm"
             onClick={onClose}
-            className="text-primary hover:bg-primary hover:text-primary-foreground"
+            className="text-gray-400 hover:bg-gray-600 hover:text-gray-300 h-7 w-7 p-0"
           >
             <X className="w-4 h-4" />
           </Button>
         </div>
 
         {/* Cart Items */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 relative z-10">
+        <div className="flex-1 overflow-y-auto p-3 space-y-3 relative z-10">
           {cart.length === 0 ? (
-            <div className="text-center py-12">
-              <ShoppingCart className="w-16 h-16 mx-auto text-muted-foreground mb-4 opacity-50" />
-              <p className="text-muted-foreground font-mono">
-                No brainrot creatures yet...
+            <div className="text-center py-8">
+              <ShoppingCart className="w-12 h-12 mx-auto text-gray-500 mb-3 opacity-30" />
+              <p className="text-gray-500 font-mono text-sm">
+                Cart is empty
               </p>
             </div>
           ) : (
             cart.map((item) => (
-              <Card key={item.id} className="p-4 bg-card/50 border-primary/30">
-                <div className="flex items-center gap-4">
+              <Card key={item.id} className="p-3 bg-gray-700 border-gray-600">
+                <div className="flex items-center gap-3">
                   {/* Item Image */}
-                  <div className="w-16 h-16 flex-shrink-0">
+                  <div className="w-12 h-12 flex-shrink-0">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -93,10 +93,10 @@ export const CartSidebar = ({
 
                   {/* Item Details */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-inter font-bold text-sm text-foreground truncate">
+                    <h3 className="font-inter font-medium text-xs text-gray-300 truncate">
                       {item.name}
                     </h3>
-                    <p className="text-primary font-mono font-bold">
+                    <p className="text-gray-400 font-mono text-sm">
                       R$ {item.price.toFixed(2)}
                     </p>
                     
@@ -106,7 +106,7 @@ export const CartSidebar = ({
                         size="sm"
                         variant="outline"
                         onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
-                        className="w-8 h-8 p-0 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+                        className="w-8 h-8 p-0 border-gray-600/50 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
                       >
                         <Minus className="w-3 h-3" />
                       </Button>
@@ -119,7 +119,7 @@ export const CartSidebar = ({
                         size="sm"
                         variant="outline"
                         onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                        className="w-8 h-8 p-0 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+                        className="w-8 h-8 p-0 border-gray-600/50 text-gray-400 hover:bg-gray-700 hover:text-gray-200"
                       >
                         <Plus className="w-3 h-3" />
                       </Button>
@@ -143,15 +143,15 @@ export const CartSidebar = ({
 
         {/* Footer / Checkout */}
         {cart.length > 0 && (
-          <div className="border-t-2 border-primary p-4 bg-card/50 relative z-10">
-            <Separator className="mb-4 bg-primary/30" />
+          <div className="border-t-2 border-gray-600 p-4 bg-card/50 relative z-10">
+          <Separator className="mb-4 bg-gray-600/30" />
             
             {/* Total */}
             <div className="flex justify-between items-center mb-4">
               <span className="font-inter font-bold text-lg text-foreground">
                 TOTAL:
               </span>
-              <span className="font-mono font-black text-2xl text-primary">
+              <span className="font-mono font-black text-2xl text-gray-300">
                 R$ {totalPrice.toFixed(2)}
               </span>
             </div>
