@@ -64,60 +64,60 @@ export const Store = () => {
   const secretoCount = products.filter(p => p.rarity === 'secreto').length;
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-gray-800 relative">
       {/* Animated background scanlines */}
-      <div className="fixed inset-0 scanlines opacity-10 pointer-events-none" />
+      <div className="fixed inset-0 scanlines opacity-5 pointer-events-none" />
       
       <Header onOpenCart={() => setIsCartOpen(true)} cartItemCount={getTotalItems()} />
       
-      <main className="container mx-auto px-4 py-8 relative z-10">
+      <main className="container mx-auto px-3 py-4 relative z-10">
         {/* Store Intro */}
-        <div className="text-center mb-12">
-          <h2 className="font-inter font-black text-3xl md:text-5xl mb-4">
-            <span className="text-primary">COLLECT</span>{' '}
-            <span className="text-secondary">RARE</span>{' '}
-            <span className="text-accent">CREATURES</span>
+        <div className="text-center mb-6">
+          <h2 className="font-inter font-bold text-xl md:text-2xl mb-2">
+            <span className="text-gray-400">COLLECT</span>{' '}
+            <span className="text-gray-500">RARE</span>{' '}
+            <span className="text-gray-400">CREATURES</span>
           </h2>
-          <p className="text-muted-foreground font-mono text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 font-mono text-sm max-w-xl mx-auto">
             Welcome to the most chaotic pixel creature marketplace in the multiverse. 
             Each creature is blessed with pure brainrot energy.
           </p>
         </div>
 
         {/* Filters */}
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-primary" />
-              <span className="font-inter font-bold text-foreground">FILTER BY RARITY:</span>
+        <div className="mb-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-1">
+              <Filter className="w-3 h-3 text-gray-500" />
+              <span className="font-inter font-bold text-gray-400 text-sm">FILTER BY RARITY:</span>
             </div>
             
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1">
               <Button
                 variant={rarityFilter === 'all' ? 'default' : 'outline'}
                 onClick={() => setRarityFilter('all')}
-                className="font-mono"
+                className="font-mono text-xs h-7 bg-gray-700 hover:bg-gray-600 border-gray-600"
                 size="sm"
               >
-                ALL ({products.length})
+                All <Badge className="ml-1 text-xs bg-gray-600">{products.length}</Badge>
               </Button>
               
               <Button
                 variant={rarityFilter === 'brainrot' ? 'default' : 'outline'}
                 onClick={() => setRarityFilter('brainrot')}
-                className="font-mono"
+                className="font-mono text-xs h-7 bg-gray-700 hover:bg-gray-600 border-gray-600"
                 size="sm"
               >
-                🧠 BRAINROT GOD ({brainrotCount})
+                Brainrot <Badge className="ml-1 text-xs bg-gray-600">{brainrotCount}</Badge>
               </Button>
               
               <Button
                 variant={rarityFilter === 'secreto' ? 'default' : 'outline'}
                 onClick={() => setRarityFilter('secreto')}
-                className="font-mono"
+                className="font-mono text-xs h-7 bg-gray-700 hover:bg-gray-600 border-gray-600"
                 size="sm"
               >
-                🔐 SECRETO ({secretoCount})
+                Secreto <Badge className="ml-1 text-xs bg-gray-600">{secretoCount}</Badge>
               </Button>
             </div>
           </div>
@@ -126,22 +126,21 @@ export const Store = () => {
         <Separator className="mb-8 bg-primary/30" />
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={handleAddToCart}
+              onAddToCart={() => handleAddToCart(product)}
             />
           ))}
         </div>
 
         {/* Empty State */}
         {filteredProducts.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground font-mono text-lg">
-              No creatures found with the selected rarity filter.
-            </p>
+          <div className="text-center py-6">
+            <h3 className="text-lg font-bold mb-1 text-gray-400">No creatures found</h3>
+            <p className="text-gray-500 text-sm">Try changing your filter or check back later!</p>
           </div>
         )}
 
@@ -157,14 +156,13 @@ export const Store = () => {
 
       {/* Cart Sidebar */}
       <CartSidebar
-        cart={cart}
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
-        onRemoveFromCart={removeFromCart}
+        cart={cart}
+        onRemove={removeFromCart}
         onUpdateQuantity={updateQuantity}
         onCheckout={handleCheckout}
         totalPrice={getTotalPrice()}
-        totalItems={getTotalItems()}
       />
     </div>
   );

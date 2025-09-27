@@ -11,18 +11,18 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   const rarityStyles = {
-    brainrot: 'rarity-brainrot bg-card/50',
-    secreto: 'rarity-secreto bg-gradient-to-br from-purple-900/30 to-pink-900/30',
+    brainrot: 'bg-gray-700',
+    secreto: 'bg-gray-700',
   };
 
   const rarityBadgeStyles = {
-    brainrot: 'bg-brainrot-green text-brainrot-black font-bold',
-    secreto: 'bg-rarity-secreto text-brainrot-black font-bold animate-pulse',
+    brainrot: 'bg-gray-600 text-gray-300',
+    secreto: 'bg-gray-600 text-gray-300',
   };
 
   const rarityLabels = {
-    brainrot: '🧠 BRAINROT GOD',
-    secreto: '🔐 SECRETO',
+    brainrot: 'Brainrot',
+    secreto: 'Secreto',
   };
 
   return (
