@@ -11,8 +11,8 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   const rarityStyles = {
-    brainrot: 'bg-gray-700',
-    secreto: 'bg-gray-700',
+    brainrot: 'bg-gray-700 shadow-[0_0_10px_3px_rgba(255,255,255,0.5)] shadow-white',
+    secreto: 'bg-gray-700 shadow-[0_0_10px_3px_rgba(0,0,0,0.7)] shadow-black',
   };
 
   const rarityBadgeStyles = {
@@ -71,7 +71,7 @@ export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         
         {/* Game Value */}
         {product.gameValue && (
-          <div className="text-xl font-mono text-gray-600 font-medium">
+          <div className="text-xl font-mono text-black font-medium">
             {product.gameValue}
           </div>
         )}
