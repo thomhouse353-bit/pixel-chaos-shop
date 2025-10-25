@@ -159,10 +159,11 @@ export const Store = () => {
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cart={cart}
-        onRemove={removeFromCart}
+        onRemoveFromCart={removeFromCart}
         onUpdateQuantity={updateQuantity}
         onCheckout={handleCheckout}
         totalPrice={getTotalPrice()}
+        totalItems={getTotalItems()}
       />
     </div>
   );
